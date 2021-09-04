@@ -1,23 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form>
+  <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
+    <Form.Label column sm={2}>
+      Email
+    </Form.Label>
+    <Col sm={10}>
+      <Form.Control type="email" placeholder="Email" />
+    </Col>
+  </Form.Group>
+
+  <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+    <Form.Label column sm={2}>
+      Password
+    </Form.Label>
+    <Col sm={10}>
+      <Form.Control type="password" placeholder="Password" />
+    </Col>
+  </Form.Group>
+  <fieldset>
+    <Form.Group as={Row} className="mb-3">
+      <Form.Label as="legend" column sm={2}>
+        Radios
+      </Form.Label>
+      <Col sm={10}>
+        <Form.Check
+          type="radio"
+          label="first radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios1"
+        />
+        <Form.Check
+          type="radio"
+          label="second radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios2"
+        />
+        <Form.Check
+          type="radio"
+          label="third radio"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios3"
+        />
+      </Col>
+    </Form.Group>
+  </fieldset>
+  <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
+    <Col sm={{ span: 10, offset: 2 }}>
+      <Form.Check label="Remember me" />
+    </Col>
+  </Form.Group>
+
+  <Form.Group as={Row} className="mb-3">
+    <Col sm={{ span: 10, offset: 2 }}>
+      <Button type="submit">Sign in</Button>
+    </Col>
+  </Form.Group>
+</Form>
     </div>
   );
 }
